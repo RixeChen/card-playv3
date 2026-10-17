@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>好友棋牌房</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- ===================== 首页：填昵称、建房 / 进房 ===================== -->
+<section id="home" class="screen">
+  <div class="home-box">
+    <h1 class="logo">好友棋牌房</h1>
+    <p class="sub">免注册，填个昵称就能开桌 · 支持 2–8 人</p>
+
+    <label class="field">
+      <span>你的昵称</span>
+      <input id="nameInput" maxlength="12" placeholder="例如：小明" autocomplete="off">
+    </label>
+
+    <div class="field">
+      <span>选择游戏</span>
+      <div id="gamePicker" class="game-picker"></div>
+    </div>
+
+    <button id="btnCreate" class="btn primary big">创建房间</button>
+
+    <div class="divider"><span>或</span></div>
+
+    <label class="field">
+      <span>房间号 / 邀请链接</span>
+      <input id="roomInput" maxlength="64" placeholder="例如：A3K9" autocomplete="off">
+    </label>
+    <button id="btnJoin" class="btn big">加入房间</button>
+
+    <p class="tip">提示：把链接里的 4 位房间号发给朋友，朋友打开同一个网址、输入房间号即可入座。</p>
+    <p id="homeErr" class="err"></p>
+  </div>
+</section>
+
+<!-- ===================== 房间页 ===================== -->
+<section id="room" class="screen" hidden>
+  <header class="room-head">
+    <div class="head-left">
+      <button id="btnLeave" class="btn tiny ghost">离开</button>
+      <div class="room-id">房间 <b id="roomIdText">----</b></div>
+      <div class="game-name" id="gameNameText"></div>
+    </div>
+    <div class="head-right">
+      <button id="btnRules" class="btn tiny ghost">规则</button>
+      <button id="btnCopy" class="btn tiny">复制邀请链接</button>
+    </div>
+  </header>
+
+  <div id="playersBar" class="players-bar"></div>
+
+  <main id="table" class="table"></main>
+
+  <aside class="side">
+    <div class="side-title">牌桌动态</div>
+    <div id="logBox" class="log-box"></div>
+  </aside>
+
+  <div id="hostBar" class="host-bar"></div>
+
+  <div id="toast" class="toast"></div>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/shared/cards.js"></script>
+<script src="/shared/poker.js"></script>
+<script src="/shared/combos.js"></script>
+<script src="/shared/shengji-rules.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/net.js"></script>
+<script src="/js/games/stud5.js"></script>
+<script src="/js/games/cheat.js"></script>
+<script src="/js/games/baohuang.js"></script>
+<script src="/js/games/shengji.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

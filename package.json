@@ -1,0 +1,19 @@
+{
+  "name": "card-party",
+  "version": "1.0.0",
+  "private": true,
+  "description": "好友在线棋牌房：港式五张牌 / 唬牌 / 保皇 / 升级",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node scripts/selftest.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
